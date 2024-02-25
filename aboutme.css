@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #070a13;
+    margin: 0;
+    height: 100%;
+}
+
+.smallScreen {
+    display: none;
+}
+
+.introContainer {
+    position: relative;
+    padding: 10px;
+    width: min(65vw, 1000px);
+    height: max(50vh, 360px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+    position: relative;
+    height: fit-content;
+    width: max(800px, 60vw);
+    
+}
+
+.introContainer p {
+    position: relative;
+    color: #ABABAB;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 6;
+}
+
+.introContainer .aboutContainer h2 {
+    position: relative;
+    z-index: 3;
+    color: #ABABAB;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-top: auto;
+    text-align: center;
+    z-index: 5;
+    opacity: 1;
+    z-index: 6;
+}
+
+.introContainer .aboutContainer h1 {
+    position: relative;
+    font-size: 58px;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 76px;
+    letter-spacing: -1px;
+    background: linear-gradient(92deg, #DBDBDB 3.89%, #383838 120.98%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*DBDBDB*/
+    /*383838*/
+    z-index: 6;
+}
+
+.introContainer img {
+    position: absolute;
+    flex-shrink: 0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    color: lightgray;
+    top: max(-160px, -10vh);
+    width: max(50vw, 600px);
+    opacity: 1;
+    z-index: 0;
+    filter: brightness(1.3);
+}
+
+.ambientLight {
+    position: absolute;
+    width: 100vw;
+    height: 120vh;
+    bottom: auto;
+    z-index: 1;
+}
+
+.scrollContainer {
+    margin-top: 30px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+}
+
+.scrollContainer p {
+    position: relative;
+    color: #ABABAB;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 6;
+}
+
+svg {
+    position: absolute;
+}
+
+.introContainer .scrollSvg {
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.introContainer .scrollSvg.show {
+    z-index: 100;
+    pointer-events: all;
+}
+
+.introContainer .scrollSvg:hover {
+    opacity: 0.9;
+    transform: scale(1.08);
+}
+
+.introContainer .scrollSvg:hover > path,
+.introContainer .scrollSvg:hover > rect {
+    transition: all ease-in-out 0.2s;
+    stroke: #9781CC;
+}
+
+.aboutContainer {
+    position: relative;
+}
+
+.infoContainer {
+    position: relative;
+    background-color: #070a13;
+    border-top: 0.5px solid white;
+    margin: 0;
+    padding: 0;
+    margin-top: 100vh;
+    height: fit-content;
+    width: 100vw;
+}
+
+#numbers {
+    display: flex;
+    align-items: flex-start; 
+    width: 20vw;
+    margin: auto;
+}
+
+/* convert to classes and change names to make it work for all */
+/* make gap be vw and have a min */
+/* when it gets too small, make a media query to align the #numbers vertically and lower the gaps and stuff */
+
+.volunterYears {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    width: fit-content;
+}
+
+.textContainer {
+    display: block;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1 1 0;
+    width: fit-content;
+    min-width: 0;
+}
+
+.bigText {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 110px;
+    cursor: default;
+    text-shadow:
+        0 0 7px #fff;
+
+    transition: all 0.2s ease-in-out;
+    width: min(100px, fit-content);
+}
+
+.caption {
+    color: #ABABAB;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: default;
+    text-wrap: nowrap;
+    text-shadow:
+        0 0 3px #ABABAB;
+}
+
+.bigText:hover {
+    opacity: 0.9;
+    text-shadow:
+        0 0 10px #fff;
+}
+
+.dataContainer {
+    display: flex;
+    width: 60vw;
+    margin: auto;
+    margin-top: 8vh;
+    gap: min(1500px, 10vw);
+    justify-content: center;
+    min-height: fit-content;
+    min-width: fit-content;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.hidden1 {
+    transform: translateX(-120%);
+    transition: opacity 0.2s ease-in-out, filter 1s ease-in-out, transform 1s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.hidden2 {
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out, filter 0.7s ease-in-out, transform 0.7s ease-out;
+    transition-delay: 0.8s;
+}
+
+.hidden3 {
+    transform: translateX(120%);
+    transition: opacity 0.2s ease-in-out, filter 1s ease-in-out, transform 1s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.hidden4 {
+    transform: translateX(50%);
+    transition: opacity 0.2s ease-in-out, filter 0.7s ease-in-out, transform 0.7s  ease-out;
+    transition-delay: 0.8s;
+}
+
+.hidden5 {
+    transform: translateY(20%);
+    z-index: 6;
+    transition: opacity 1s ease-in-out, filter 1.2s ease-in-out, transform 0.8s ease-in-out;
+    transition-delay: 1.2s;
+}
+
+.hidden6 {
+    transition: opacity 1.0s ease-in-out, filter 1.2s ease-in-out, transform 0.7s  ease-out;
+    transition-delay: 0.8s;
+}
+
+.hidden7 {
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, filter 1.2s ease-in-out;
+    transition-delay: 1.0s;
+}
+
+.hidden8 {
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.hidden9 {
+    z-index: 6;
+    transform: translateY(-300%);
+    transition: opacity 1s ease-in-out, filter 1.2s ease-in-out, transform 0.8s ease-in-out;
+    transition-delay: 1.6s;
+}
+
+.hidden10 {
+    z-index: 10;
+    transform: translateY(-200%);
+    transition: opacity 1s ease-in-out, filter 1.2s ease-in-out, transform 0.8s ease-in-out;
+    transition-delay: 2s;
+    /* animation: pointerEventsHandler 1.25s forwards; */
+}
+
+/*
+@keyframes pointerEventsHandler {
+    100% {pointer-events: all; cursor: pointer;}
+}*/
+
+#firstLight {
+    transition-delay: 0.1s;
+}
+
+#secondLight {
+    transition-delay: 0.4s;
+}
+
+#thirdLight {
+    transition-delay: 0.65s;
+}
+
+
+#fourthLight {
+    transition-delay: 0.85s;
+}
+
+
+.show {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Start our story */
+.storyContainer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 80vw;
+    max-width: 800px;
+    min-width: 300px;
+    height: fit-content;
+    margin: 30px auto 15px;
+    word-spacing: 10px;
+}
+
+.storyContainer h1 {
+    margin: 50px auto 5px;
+    color: #AA92E5;
+    font-family: 'Inter';
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 5rem;
+    letter-spacing: -0.01rem;
+}
+
+.storyContainer h1 span {
+    color: #DBDBDB;
+    font-family: 'Inter';
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 5rem;
+    letter-spacing: -0.01rem;
+}
+.storyContainer .storyTextContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: max(fit-content, 100%);
+}
+
+.storyTextContainer .paragraphContainer {
+    width: 80%;
+}
+
+.storyTextContainer .paragraphContainer p, .storyTextContainer .paragraphContainer span {
+    color: #ABABAB;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-spacing: 0;
+}
+
+.storyTextContainer .paragraphContainer span {
+    color: #F2F2F2;
+}
+
+/* Change Animations for Media Queries */
+
+@media (max-width: 1125px) {
+    .dataContainer {
+        gap: 5vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dataContainer  {
+        flex-direction: column;
+        gap: 10vh;
+        min-height: min-content;
+    }
+    
+    .volunterYears {
+        flex-direction: row;
+        gap: min(30vw, 100px);
+    }
+
+    .bigText {
+        line-height: 60px;
+    }
+
+    .textContainer {
+        width: 40vw;
+        margin-left: auto;
+    }
+
+    .bigText2 {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 865px) {
+    .introContainer {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 760px) {
+    .bigText {
+        font-size: 3.3rem;
+    }
+
+    .caption {
+        font-size: 1.8rem;
+    }
+
+    .smallScreen {
+        display: block;
+    }
+
+    .largeScreen {
+        display: none;
+    }
+}
+
+@media (max-width: 660px) {
+    .introContainer .aboutContainer h1 {
+        font-size: 55px;
+        line-height: 60px;
+    }
+    
+    .introContainer .aboutContainer h2 {
+        font-size: 30px;
+    }
+
+    .volunterYears {
+        gap: 40px;
+    }
+
+    .introContainer {
+        margin-top: 0;
+    }
+    
+    .introContainer img {
+        width: max(300px, 100%);
+        min-height: 600px;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 620px) {
+    .bigText {
+        font-size: 3.2rem;
+    }
+
+    .volunterYears {
+        gap: 50px;
+    }
+
+    /* fix image heren*/
+}
+
+@media (max-width: 600px) {
+    .volunterYears {
+        flex-direction: column;
+    }
+
+    .textContainer {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .bigText {
+        margin: 0;
+    }
+
+    .dataContainer {
+        display: flex;
+        align-items: center;
+        gap: 7vh;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .volunterYears {
+        gap: 7vh;
+    }
+
+    .introContainer .scrollSvg {
+        display: none;
+    }
+
+    .introContainer .aboutContainer h1 {
+        font-size: 47px;
+        line-height: 55px;
+    }
+    
+    .introContainer .aboutContainer h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 570px) {
+    .introContainer img {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .introContainer .aboutContainer h1 {
+        font-size: 46px;
+    }
+    
+    .introContainer .aboutContainer h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-height: 550px) {
+    .introContainer .scrollSvg {
+        display: none;
+    }
+}
+
+@media (pointer:none) {
+    .introContainer .scrollSvg {
+        display: none;
+    }
+}
